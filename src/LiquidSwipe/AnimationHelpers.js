@@ -63,7 +63,7 @@ export const snapProgress = (
       [
         cond(
           clockRunning(clock),
-          [stopClock(clock), set(offset, state.position)],
+          [stopClock(clock), set(offset, state.position),],
           set(state.position, diffClamp(add(offset, value), 0, 1))
         ),
       ],

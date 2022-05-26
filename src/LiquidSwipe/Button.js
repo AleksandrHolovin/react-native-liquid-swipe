@@ -3,17 +3,17 @@ import { Dimensions } from "react-native";
 import Animated from "react-native-reanimated";
 import { Feather as Icon } from "@expo/vector-icons";
 
-const { sub, interpolate, Extrapolate } = Animated;
+const { sub, interpolateNode, Extrapolate } = Animated;
 const { width } = Dimensions.get("window");
 const size = 50;
 
 export default ({ progress, y }) => {
-  const translateX = interpolate(progress, {
+  const translateX = interpolateNode(progress, {
     inputRange: [0, 0.4],
     outputRange: [width - size - 8, 0],
   });
   const translateY = sub(y, size / 2);
-  const opacity = interpolate(progress, {
+  const opacity = interpolateNode(progress, {
     inputRange: [0, 0.1],
     outputRange: [1, 0],
     extrapolate: Extrapolate.CLAMP,

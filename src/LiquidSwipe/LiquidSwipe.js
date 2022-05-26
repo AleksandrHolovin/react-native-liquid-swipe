@@ -5,10 +5,10 @@ import Animated, {
   cond,
   multiply,
   divide,
-  interpolate,
+  interpolateNode,
 } from "react-native-reanimated";
 import { PanGestureHandler, State } from "react-native-gesture-handler";
-import { onGestureEvent, snapPoint } from "react-native-redash";
+import { onGestureEvent, snapPoint } from "react-native-redash/src/v1";
 
 import Weave from "./Weave";
 import { followPointer, snapProgress } from "./AnimationHelpers";
@@ -51,11 +51,11 @@ export default () => {
   const isBack = new Value(0);
   const gestureProgress = cond(
     isBack,
-    interpolate(translationX, {
+    interpolateNode(translationX, {
       inputRange: [0, maxDist],
       outputRange: [1, 0],
     }),
-    interpolate(translationX, {
+    interpolateNode(translationX, {
       inputRange: [-maxDist, 0],
       outputRange: [0.4, 0],
     })

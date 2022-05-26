@@ -1,5 +1,5 @@
 import Animated from "react-native-reanimated";
-import { string } from "react-native-redash";
+import { string } from "react-native-redash/src/v1";
 
 export const moveTo = (
   commands,
