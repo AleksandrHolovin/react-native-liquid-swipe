@@ -8,10 +8,11 @@
 
 import React from 'react';
 import Swipe from './src/LiquidSwipe';
+import ScrollableHeader from './src/ScrollableHeader/index';
 
 const App: () => Node = () => {
   return (
-    <Swipe />
+    <ScrollableHeader />
   )
 };
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Dimensions } from "react-native";
 import Animated from "react-native-reanimated";
-import { Feather as Icon } from "@expo/vector-icons";
 
 const { sub, interpolateNode, Extrapolate } = Animated;
 const { width } = Dimensions.get("window");
